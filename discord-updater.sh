@@ -3,7 +3,7 @@
 
 # Variables
 DISCORD_URL="https://discord.com/api/download?platform=linux&format=deb"
-TEMP_DIR="/tmp/discord-update"
+TEMP_DIR="/tmp/discord-updater"
 DISCORD_DEB="$TEMP_DIR/discord.deb"
 
 # Create temporary directory
