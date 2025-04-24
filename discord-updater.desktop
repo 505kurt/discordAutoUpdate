@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Discord Auto-Updater (XFCE4)
-Exec=xfce4-terminal -e "../Downloads/discordAutoUpdate/discord-updater.sh"
-Icon=utilities-terminal
-Terminal=false
-Type=Application
-Categories=Utility;
