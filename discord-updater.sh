@@ -10,6 +10,23 @@ DISCORD_URL="https://discord.com/api/download?platform=linux&format=deb"
 TEMP_DIR="/tmp/discord-updater"
 DISCORD_DEB="$TEMP_DIR/discord.deb"
 
+# Function to ensure the script runs automatically on system boot or every 5 hours
+install_autostart() {
+    # Check if the script is already scheduled in crontab
+    (crontab -l 2>/dev/null | grep -q "@reboot $FINAL_PATH") || {
+        echo "Adding autostart entry to crontab..."
+        (crontab -l 2>/dev/null; echo "@reboot $FINAL_PATH") | crontab -
+    }
+
+    # Check if the 5-hour schedule exists, otherwise add it
+    (crontab -l 2>/dev/null | grep -q "0 */5 \* \* \* $FINAL_PATH") || {
+        echo "Adding 5-hour interval entry to crontab..."
+        (crontab -l 2>/dev/null; echo "0 */5 * * * $FINAL_PATH") | crontab -
+    }
+}
+
+install_autostart
+
 # Function to ensure the script is in PATH and executable
 ensure_command() {
     # If the script is not in /usr/local/bin

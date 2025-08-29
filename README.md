@@ -29,6 +29,13 @@ This script automates the process of updating Discord on Debian-based systems. I
 ```bash
 discord-update
 ```
+5. **Automatic updates scheduling**
+
+After the first execution, the script automatically schedules itself to run on system boot and every 5 hours.  
+This means Discord will be checked for updates automatically without any manual intervention:
+- **On boot:** The script runs once every time the system starts.
+- **Every 5 hours:** The script runs at 0:00, 5:00, 10:00, 15:00, and 20:00, ensuring your Discord is always up-to-date.
+
 **Note:** 
 The script automatically adds a symbolic link to `/usr/local/bin/discord-update`, allowing simplified execution from the terminal.
 
@@ -63,5 +70,10 @@ Este script automatiza o processo de atualização do Discord em sistemas basead
 ```bash
 discord-update
 ```
+5. Após a primeira execução, o script se agenda automaticamente para rodar no boot do sistema e a cada 5 horas.  
+Isso significa que o Discord será verificado para atualizações automaticamente, sem necessidade de intervenção manual:
+- **No boot:** O script é executado uma vez a cada inicialização do sistema.
+- **A cada 5 horas:** O script é executado às 0:00, 5:00, 10:00, 15:00 e 20:00, garantindo que o Discord esteja sempre atualizado.
+
 **Observação:** 
 O script adiciona automaticamente um link simbólico para `/usr/local/bin/discord-update`, para permitir a execução simplificada pelo terminal.
